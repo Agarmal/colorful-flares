@@ -28,7 +28,7 @@ public class ColorfulFlares {
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public ColorfulFlares() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        @SuppressWarnings("removal") IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         AllItems.register(modEventBus);
         AllEntities.register(modEventBus);

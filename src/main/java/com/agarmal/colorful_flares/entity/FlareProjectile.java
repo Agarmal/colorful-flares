@@ -28,9 +28,18 @@ public class FlareProjectile extends ThrowableItemProjectile {
     private BlockPos previousPos = null;
     private boolean canDamage = true;
     private long spawnTime;
+    private boolean placeLights = true;
 
     private static final Logger LOGGER = LogUtils.getLogger();
     private static final double MIN_SPEED = 0.2;
+    private static final Direction[] DIRECTION_CHECK_ORDER = {
+            Direction.UP,
+            Direction.DOWN,
+            Direction.NORTH,
+            Direction.SOUTH,
+            Direction.WEST,
+            Direction.EAST
+    };
 
     public FlareProjectile(EntityType<? extends ThrowableItemProjectile> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -106,7 +115,14 @@ public class FlareProjectile extends ThrowableItemProjectile {
         super.tick();
         if (!this.level().isClientSide) {
             checkGroundState();
-            updateLightBlock();
+            removeLightBlock();
+            if (this.placeLights) { placeLightBlock(); }
+
+            // Apply buoyancy if in water
+            if (this.isUnderWater()) {
+                this.setDeltaMovement(this.getDeltaMovement().multiply(0.99, 0.8, 0.99).add(0, 0.04, 0));
+            }
+
             if ((this.level().getGameTime() - this.spawnTime) > (120 * 20) || this.isOnFire()) {
                 this.remove(RemovalReason.UNLOADED_TO_CHUNK);
             }
@@ -128,6 +144,7 @@ public class FlareProjectile extends ThrowableItemProjectile {
                 this.doEnchantDamageEffects((LivingEntity) shooter, hitEntity); // Apply effects...
             }
 
+            placeLights = false;
             removeLightBlock();
             this.remove(RemovalReason.KILLED);
         }
@@ -187,17 +204,22 @@ public class FlareProjectile extends ThrowableItemProjectile {
         }
     }
 
-    private void updateLightBlock() {
+    private void placeLightBlock() {
         BlockPos currentPos = blockPosition();
-        removeLightBlock();
 
-        // Place a new light block at the current position
-        BlockState state = this.level().getBlockState(currentPos);
-        if (state.isAir()) {
+        if (this.level().getBlockState(currentPos).isAir()) { // Place a new light block at the current position
             this.level().setBlock(currentPos, AllBlocks.FLARE_LIGHT_BLOCK.get().defaultBlockState(), 3);
+            previousPos = currentPos;
+        } else {
+            for (Direction direction : DIRECTION_CHECK_ORDER) { // Check all the directions to try and place light.
+                BlockPos checkPos = currentPos.relative(direction);
+                if (this.level().getBlockState(checkPos).isAir()) {
+                    this.level().setBlock(checkPos, AllBlocks.FLARE_LIGHT_BLOCK.get().defaultBlockState(), 3);
+                    previousPos = checkPos;
+                    break;
+                }
+            }
         }
-
-        previousPos = getOnPos();
     }
 
     @Override
