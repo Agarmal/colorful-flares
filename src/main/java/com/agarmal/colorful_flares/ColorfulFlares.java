@@ -43,6 +43,9 @@ public class ColorfulFlares {
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(AllItems.WHITE_FLARE);
             event.accept(AllItems.LIGHT_GRAY_FLARE);
+            event.accept(AllItems.GRAY_FLARE);
+            event.accept(AllItems.BLACK_FLARE);
+            event.accept(AllItems.BROWN_FLARE);
             event.accept(AllItems.RED_FLARE);
             event.accept(AllItems.ORANGE_FLARE);
             event.accept(AllItems.YELLOW_FLARE);
@@ -66,6 +69,9 @@ public class ColorfulFlares {
             EntityRenderers.register(AllEntities.FLARE_PROJECTILE.get(), ThrownItemRenderer::new);
             EntityRenderers.register(AllEntities.WHITE_FLARE_PROJECTILE.get(), ThrownItemRenderer::new);
             EntityRenderers.register(AllEntities.LIGHT_GRAY_FLARE_PROJECTILE.get(), ThrownItemRenderer::new);
+            EntityRenderers.register(AllEntities.GRAY_FLARE_PROJECTILE.get(), ThrownItemRenderer::new);
+            EntityRenderers.register(AllEntities.BLACK_FLARE_PROJECTILE.get(), ThrownItemRenderer::new);
+            EntityRenderers.register(AllEntities.BROWN_FLARE_PROJECTILE.get(), ThrownItemRenderer::new);
             EntityRenderers.register(AllEntities.RED_FLARE_PROJECTILE.get(), ThrownItemRenderer::new);
             EntityRenderers.register(AllEntities.ORANGE_FLARE_PROJECTILE.get(), ThrownItemRenderer::new);
             EntityRenderers.register(AllEntities.YELLOW_FLARE_PROJECTILE.get(), ThrownItemRenderer::new);
@@ -85,6 +91,9 @@ public class ColorfulFlares {
             // WHITE, LIGHT_GRAY, RED, ORANGE, YELLOW, LIME, GREEN, CYAN, LIGHT_BLUE, BLUE, PURPLE, MAGENTA, PINK
             event.registerSpriteSet(AllParticles.WHITE_FLARE_SMOKE.get(), FlareSmoke.WhiteFactory::new);
             event.registerSpriteSet(AllParticles.LIGHT_GRAY_FLARE_SMOKE.get(), FlareSmoke.LightGrayFactory::new);
+            event.registerSpriteSet(AllParticles.GRAY_FLARE_SMOKE.get(), FlareSmoke.GrayFactory::new);
+            event.registerSpriteSet(AllParticles.BLACK_FLARE_SMOKE.get(), FlareSmoke.BlackFactory::new);
+            event.registerSpriteSet(AllParticles.BROWN_FLARE_SMOKE.get(), FlareSmoke.BrownFactory::new);
             event.registerSpriteSet(AllParticles.RED_FLARE_SMOKE.get(), FlareSmoke.RedFactory::new);
             event.registerSpriteSet(AllParticles.ORANGE_FLARE_SMOKE.get(), FlareSmoke.OrangeFactory::new);
             event.registerSpriteSet(AllParticles.YELLOW_FLARE_SMOKE.get(), FlareSmoke.YellowFactory::new);

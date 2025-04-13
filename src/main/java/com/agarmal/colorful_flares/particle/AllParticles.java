@@ -18,6 +18,12 @@ public class AllParticles {
             PARTICLE_TYPES.register("white_flare_smoke", () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> LIGHT_GRAY_FLARE_SMOKE =
             PARTICLE_TYPES.register("light_gray_flare_smoke", () -> new SimpleParticleType(true));
+    public static final RegistryObject<SimpleParticleType> GRAY_FLARE_SMOKE =
+            PARTICLE_TYPES.register("gray_flare_smoke", () -> new SimpleParticleType(true));
+    public static final RegistryObject<SimpleParticleType> BLACK_FLARE_SMOKE =
+            PARTICLE_TYPES.register("black_flare_smoke", () -> new SimpleParticleType(true));
+    public static final RegistryObject<SimpleParticleType> BROWN_FLARE_SMOKE =
+            PARTICLE_TYPES.register("brown_flare_smoke", () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> RED_FLARE_SMOKE =
             PARTICLE_TYPES.register("red_flare_smoke", () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> ORANGE_FLARE_SMOKE =

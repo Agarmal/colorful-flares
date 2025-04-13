@@ -69,6 +69,33 @@ public class FlareSmoke extends TextureSheetParticle {
         }
     }
     @OnlyIn(Dist.CLIENT)
+    public static class GrayFactory implements ParticleProvider<SimpleParticleType> {
+        private final SpriteSet spriteSet;
+        public GrayFactory(SpriteSet spriteSet) { this.spriteSet = spriteSet; }
+        public Particle createParticle(SimpleParticleType particleType, ClientLevel level, double x, double y, double z,
+                                       double dx, double dy, double dz) {
+            return new FlareSmoke(level, x, y, z, this.spriteSet, dx, dy, dz, 0.28f, 0.31f, 0.32f);
+        }
+    }
+    @OnlyIn(Dist.CLIENT)
+    public static class BlackFactory implements ParticleProvider<SimpleParticleType> {
+        private final SpriteSet spriteSet;
+        public BlackFactory(SpriteSet spriteSet) { this.spriteSet = spriteSet; }
+        public Particle createParticle(SimpleParticleType particleType, ClientLevel level, double x, double y, double z,
+                                       double dx, double dy, double dz) {
+            return new FlareSmoke(level, x, y, z, this.spriteSet, dx, dy, dz, 0.11f, 0.11f, 0.13f);
+        }
+    }
+    @OnlyIn(Dist.CLIENT)
+    public static class BrownFactory implements ParticleProvider<SimpleParticleType> {
+        private final SpriteSet spriteSet;
+        public BrownFactory(SpriteSet spriteSet) { this.spriteSet = spriteSet; }
+        public Particle createParticle(SimpleParticleType particleType, ClientLevel level, double x, double y, double z,
+                                       double dx, double dy, double dz) {
+            return new FlareSmoke(level, x, y, z, this.spriteSet, dx, dy, dz, 0.51f, 0.33f, 0.2f);
+        }
+    }
+    @OnlyIn(Dist.CLIENT)
     public static class RedFactory implements ParticleProvider<SimpleParticleType> {
         private final SpriteSet spriteSet;
         public RedFactory(SpriteSet spriteSet) { this.spriteSet = spriteSet; }

@@ -89,6 +89,9 @@ public class FlareProjectile extends ThrowableItemProjectile {
                     switch (flareColor) {
                         case WHITE -> particleOptions = AllParticles.WHITE_FLARE_SMOKE.get();
                         case LIGHT_GRAY -> particleOptions = AllParticles.LIGHT_GRAY_FLARE_SMOKE.get();
+                        case GRAY -> particleOptions = AllParticles.GRAY_FLARE_SMOKE.get();
+                        case BLACK -> particleOptions = AllParticles.BLACK_FLARE_SMOKE.get();
+                        case BROWN -> particleOptions = AllParticles.BROWN_FLARE_SMOKE.get();
                         case RED -> particleOptions = AllParticles.RED_FLARE_SMOKE.get();
                         case ORANGE -> particleOptions = AllParticles.ORANGE_FLARE_SMOKE.get();
                         case YELLOW -> particleOptions = AllParticles.YELLOW_FLARE_SMOKE.get();
@@ -175,7 +178,7 @@ public class FlareProjectile extends ThrowableItemProjectile {
                 // Reflect the velocity vector off the surface
                 Vec3 reflection = velocity.subtract(normal.scale(2 * velocity.dot(normal)));
                 // Apply the reflected velocity, with some reduction to simulate energy loss
-                this.setDeltaMovement(reflection.scale(0.5));
+                this.setDeltaMovement(reflection.scale(0.3));
                 // Ensure the projectile has impulse to make the physics update correctly
                 this.hasImpulse = true;
                 this.canDamage = true;

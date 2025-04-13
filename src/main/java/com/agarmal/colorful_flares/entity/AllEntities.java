@@ -22,6 +22,15 @@ public class AllEntities {
     public static final RegistryObject<EntityType<LightGrayFlareProjectile>> LIGHT_GRAY_FLARE_PROJECTILE =
             ENTITY_TYPES.register("light_gray_flare_projectile", () -> EntityType.Builder.<LightGrayFlareProjectile>of(LightGrayFlareProjectile::new, MobCategory.MISC)
                     .sized(0.5f, 0.5f).build("light_gray_flare_projectile"));
+    public static final RegistryObject<EntityType<GrayFlareProjectile>> GRAY_FLARE_PROJECTILE =
+            ENTITY_TYPES.register("gray_flare_projectile", () -> EntityType.Builder.<GrayFlareProjectile>of(GrayFlareProjectile::new, MobCategory.MISC)
+                    .sized(0.5f, 0.5f).build("gray_flare_projectile"));
+    public static final RegistryObject<EntityType<BlackFlareProjectile>> BLACK_FLARE_PROJECTILE =
+            ENTITY_TYPES.register("black_flare_projectile", () -> EntityType.Builder.<BlackFlareProjectile>of(BlackFlareProjectile::new, MobCategory.MISC)
+                    .sized(0.5f, 0.5f).build("black_flare_projectile"));
+    public static final RegistryObject<EntityType<BrownFlareProjectile>> BROWN_FLARE_PROJECTILE =
+            ENTITY_TYPES.register("brown_flare_projectile", () -> EntityType.Builder.<BrownFlareProjectile>of(BrownFlareProjectile::new, MobCategory.MISC)
+                    .sized(0.5f, 0.5f).build("brown_flare_projectile"));
     public static final RegistryObject<EntityType<RedFlareProjectile>> RED_FLARE_PROJECTILE =
             ENTITY_TYPES.register("red_flare_projectile", () -> EntityType.Builder.<RedFlareProjectile>of(RedFlareProjectile::new, MobCategory.MISC)
                     .sized(0.5f, 0.5f).build("red_flare_projectile"));

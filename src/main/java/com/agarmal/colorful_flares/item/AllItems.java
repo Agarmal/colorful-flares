@@ -15,6 +15,12 @@ public class AllItems {
             () -> new WhiteFlareItem(new Item.Properties()));
     public static final RegistryObject<Item> LIGHT_GRAY_FLARE = ITEMS.register("light_gray_flare",
             () -> new LightGrayFlareItem(new Item.Properties()));
+    public static final RegistryObject<Item> GRAY_FLARE = ITEMS.register("gray_flare",
+            () -> new GrayFlareItem(new Item.Properties()));
+    public static final RegistryObject<Item> BLACK_FLARE = ITEMS.register("black_flare",
+            () -> new BlackFlareItem(new Item.Properties()));
+    public static final RegistryObject<Item> BROWN_FLARE = ITEMS.register("brown_flare",
+            () -> new BrownFlareItem(new Item.Properties()));
     public static final RegistryObject<Item> RED_FLARE = ITEMS.register("red_flare",
             () -> new RedFlareItem(new Item.Properties()));
     public static final RegistryObject<Item> ORANGE_FLARE = ITEMS.register("orange_flare",

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/colorful-flares.iml" filepath="$PROJECT_DIR$/.idea/modules/colorful-flares.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/colorful-flares.main.iml" filepath="$PROJECT_DIR$/.idea/modules/colorful-flares.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/colorful-flares.test.iml" filepath="$PROJECT_DIR$/.idea/modules/colorful-flares.test.iml" />
+    </modules>
+  </component>
+</project>
